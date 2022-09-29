@@ -1,0 +1,17 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model formfeti {
+  id          Int     @id @default(autoincrement())
+  nome        String  @db.VarChar(50)
+  email       String  @db.VarChar(45)
+  telefone    String  @db.VarChar(20)
+  curso       String  @db.VarChar(50)
+  observacoes String? @db.VarChar(255)
+}
